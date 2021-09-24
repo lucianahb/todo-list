@@ -1,3 +1,14 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from models import User, Activity
+from serializers import UserSerializer, ActivitySerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all().order_by("name")
+    serializer_class = UserSerializer
+
+
+class ActivityViewSer(viewsets.ModelViewSet):
+    queryset = Activity.objects.all().order_by("status")
+    serializer_class = ActivitySerializer
