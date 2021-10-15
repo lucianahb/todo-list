@@ -9,6 +9,6 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
 
 
-class ActivityViewSer(viewsets.ModelViewSet):
+class ActivityViewSet(viewsets.ModelViewSet):
     queryset = Activity.objects.all().order_by("status")
     serializer_class = ActivitySerializer
